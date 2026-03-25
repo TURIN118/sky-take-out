@@ -101,4 +101,14 @@ public class EmployeeController {
         return Result.success(pageResult);
     }
 
+    /**
+     * 员工账号启禁用
+     */
+    @PostMapping("/status/{status}")
+    @ApiOperation(value = "启用禁用员工账号")
+    public Result stratOrStop(@PathVariable Integer status, Long id) {
+        log.info("启用禁用员工账号:{},{}", status, id);
+        employeeService.stratOrStop(status, id);
+        return Result.success();
+    }
 }
