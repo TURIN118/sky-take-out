@@ -42,4 +42,15 @@
         order by d.create_time desc
     </select>
 
+    <!--动态查询-->
+    <select id="list" resultType="com.sky.entity.Dish">
+        SELECT * FROM dish
+        <where>
+            <if test="name != null and name != ''">and name like concat('%',#{name},'%')</if>
+            <if test="categoryId != null">and category_id = #{categoryId}</if>
+            <if test="price !=null">and price = #{price}</if>
+            <if test="status != null">and status = #{status}</if>
+        </where>
+    </select>
+
 </mapper>
