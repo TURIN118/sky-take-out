@@ -11,3 +11,7 @@ sky:
     access-key-id: minioadmin
     access-key-secret: minioadmin
     bucket-name: demo
+  redis:
+    host: 129.204.45.120
+    port: 6379
+    database: 1
