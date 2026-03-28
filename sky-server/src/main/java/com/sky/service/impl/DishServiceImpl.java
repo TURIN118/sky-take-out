@@ -165,10 +165,18 @@ public class DishServiceImpl implements DishService {
         return dishVOList;
     }
 
-    //TODO:菜品起售停售方法待实现
+    /**
+     * 菜品状态更新
+     *
+     * @param status
+     * @param id
+     */
     @Override
     public void startOrStop(Integer status, Long id) {
-        return;
+        Dish dish = Dish.builder()
+                .id(id)
+                .status(status).build();
+        dishMapper.update(dish);
     }
 
     /**
