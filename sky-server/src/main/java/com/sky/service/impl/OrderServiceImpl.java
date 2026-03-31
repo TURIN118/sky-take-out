@@ -474,7 +474,7 @@ public class OrderServiceImpl implements OrderService {
         map.put("orderId", id);
         map.put("content", "订单号：" + ordersDB.getNumber());
 
-        // 通过websocket向浏览器发送消息
+        //通过wesocket向前端浏览器发送数据
         webSocketServer.sendToAllClient(JSON.toJSONString(map));
     }
 }
